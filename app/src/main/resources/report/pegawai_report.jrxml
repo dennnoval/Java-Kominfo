@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pegawai_report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="32645f16-24d6-479f-a0a7-45d88aa753ed">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="javakominfo"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="43"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM Pegawai]]>
+	</queryString>
+	<field name="NIP" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NIP"/>
+		<property name="com.jaspersoft.studio.field.label" value="NIP"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pegawai"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nama"/>
+		<property name="com.jaspersoft.studio.field.label" value="nama"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pegawai"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tanggal_lahir" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="tanggal_lahir"/>
+		<property name="com.jaspersoft.studio.field.label" value="tanggal_lahir"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pegawai"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jenis_kelamin" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="jenis_kelamin"/>
+		<property name="com.jaspersoft.studio.field.label" value="jenis_kelamin"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pegawai"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="golongan" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="golongan"/>
+		<property name="com.jaspersoft.studio.field.label" value="golongan"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pegawai"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="alamat" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="alamat"/>
+		<property name="com.jaspersoft.studio.field.label" value="alamat"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pegawai"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="203" y="23" width="139" height="30" uuid="4c3742eb-e3a6-4d0f-8b33-820fdbbb0126"/>
+				<textElement>
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Pegawai]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="4" width="107" height="75" uuid="b4ad66f9-b92e-40c4-ad2f-cbf8aa2d8c2f"/>
+				<imageExpression><![CDATA[getClass().getResource("javakominfo/imgclass/logo.png")]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="66" splitType="Stretch">
+			<textField>
+				<reportElement x="453" y="16" width="100" height="30" uuid="cdfe0cd1-355c-4b29-bba2-58d35a0b92e7"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="16" width="100" height="30" uuid="6685165b-d1d7-4b42-b087-9f56ed89295a"/>
+				<text><![CDATA[Nama Admin :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="16" width="100" height="30" uuid="fae24315-c692-4bf5-afbd-61f17c357265"/>
+				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="95" height="30" uuid="959dbc8b-b1d3-45c0-a4b8-a6b528eb1a02">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4073b507-59c8-4703-b9c0-626e864443c5"/>
+				</reportElement>
+				<text><![CDATA[NIP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="0" width="92" height="30" uuid="4ce36333-cb95-4ea4-94bb-f62a205f7369">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="01764093-ec6b-4041-a6ee-adf31b7ce039"/>
+				</reportElement>
+				<text><![CDATA[nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="187" y="0" width="92" height="30" uuid="81984bf1-009e-4a38-8166-0f707f200ec7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="213cf6d6-6a88-4c84-a999-9f6c08241053"/>
+				</reportElement>
+				<text><![CDATA[tanggal_lahir]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="279" y="0" width="92" height="30" uuid="564e987e-e3a1-48ea-ad31-f6a9c6dbbdf8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e88db632-d10a-4e59-93b1-11080fffe122"/>
+				</reportElement>
+				<text><![CDATA[jenis_kelamin]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="371" y="0" width="92" height="30" uuid="bb12a181-c4f5-4ddf-b066-7a025792e23c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="59755664-af29-4fd8-8ab2-da05c537aa20"/>
+				</reportElement>
+				<text><![CDATA[golongan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="463" y="0" width="92" height="30" uuid="1cfdc56c-212f-47cd-acfa-57eff94c5bae">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bf088364-b593-4546-b026-9241df00ceb6"/>
+				</reportElement>
+				<text><![CDATA[alamat]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="95" height="30" uuid="c544cebf-5319-4e51-aeb3-ce2328b3f36c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4073b507-59c8-4703-b9c0-626e864443c5"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{NIP}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="95" y="0" width="92" height="30" uuid="efba3b36-12e8-4469-a0e1-1715d2a1cb92">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="01764093-ec6b-4041-a6ee-adf31b7ce039"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="187" y="0" width="92" height="30" uuid="8dad0457-a05d-4986-8dee-a631196f9dd1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="213cf6d6-6a88-4c84-a999-9f6c08241053"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{tanggal_lahir}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="0" width="92" height="30" uuid="5fc1b2d2-246d-4163-a53c-f16686f9a5be">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e88db632-d10a-4e59-93b1-11080fffe122"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{jenis_kelamin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="371" y="0" width="92" height="30" uuid="2fa70c8f-2054-456b-80d5-701cbaf8f389">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="59755664-af29-4fd8-8ab2-da05c537aa20"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{golongan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="463" y="0" width="92" height="30" uuid="4b4fcba3-864a-4ccc-bc22-90d99a26b9fd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bf088364-b593-4546-b026-9241df00ceb6"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{alamat}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="200" y="22" width="231" height="20" uuid="32e5b174-5dfb-41c3-bdc0-44e163ed3bf8"/>
+				<text><![CDATA[Copyright Team KKP Unindra - 2021]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
