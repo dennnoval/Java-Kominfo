@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="1190.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javakominfo.controller.KepegawaianController">
+   <children>
+      <ImageView fitHeight="106.0" fitWidth="152.0" layoutX="17.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/logokominfo.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="135.0" layoutY="48.0" prefHeight="33.0" prefWidth="160.0" text="Kepegawaian">
+         <font>
+            <Font name="Verdana Bold" size="21.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nipPegawaiTextField" layoutX="162.0" layoutY="149.0" prefHeight="31.0" prefWidth="200.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <Label layoutX="33.0" layoutY="154.0" text="NIP Pegawai : ">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="jenisKelaminComboBox" layoutX="162.0" layoutY="266.0" prefWidth="150.0" promptText="-- Jenis Kelamin --" />
+      <Button layoutX="34.0" layoutY="417.0" mnemonicParsing="false" onAction="#simpan" prefHeight="46.0" prefWidth="90.0" text="Simpan">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <padding>
+            <Insets left="30.0" />
+         </padding>
+      </Button>
+      <ImageView disable="true" fitHeight="31.0" fitWidth="26.0" layoutX="42.0" layoutY="428.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/simpan.png" />
+         </image>
+      </ImageView>
+      <DatePicker fx:id="tanggalLahirDatePicker" editable="false" layoutX="162.0" layoutY="230.0" promptText="M/D/YYYY" />
+      <TextArea fx:id="alamatTextArea" layoutX="162.0" layoutY="341.0" prefHeight="59.0" prefWidth="254.0" />
+      <Label layoutX="34.0" layoutY="196.0" text="Nama Pegawai :">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="34.0" layoutY="233.0" text="Tanggal Lahir : ">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="269.0" text="Jenis Kelamin : ">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="306.0" text="Golongan : ">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="34.0" layoutY="354.0" text="Alamat :">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="namaPegawaiTextField" layoutX="162.0" layoutY="190.0" prefHeight="31.0" prefWidth="254.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <ComboBox fx:id="golonganComboBox" layoutX="162.0" layoutY="303.0" prefWidth="150.0" promptText="-- Golongan --" />
+      <Button layoutX="135.0" layoutY="417.0" mnemonicParsing="false" onAction="#edit" prefHeight="46.0" prefWidth="90.0" text="Edit">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <padding>
+            <Insets left="25.0" />
+         </padding>
+      </Button>
+      <ImageView disable="true" fitHeight="31.0" fitWidth="26.0" layoutX="147.0" layoutY="428.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/edit.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="236.0" layoutY="417.0" mnemonicParsing="false" onAction="#hapus" prefHeight="46.0" prefWidth="90.0" text="Hapus">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </Button>
+      <ImageView disable="true" fitHeight="31.0" fitWidth="26.0" layoutX="241.0" layoutY="428.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/delete.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="336.0" layoutY="418.0" mnemonicParsing="false" onAction="#reset" prefHeight="46.0" prefWidth="90.0" text="Reset">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <padding>
+            <Insets left="25.0" />
+         </padding>
+      </Button>
+      <ImageView disable="true" fitHeight="31.0" fitWidth="26.0" layoutX="344.0" layoutY="429.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/reset.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="436.0" layoutY="417.0" mnemonicParsing="false" onAction="#cetak" prefHeight="46.0" prefWidth="90.0" text="Cetak">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <padding>
+            <Insets left="25.0" />
+         </padding>
+      </Button>
+      <ImageView disable="true" fitHeight="31.0" fitWidth="26.0" layoutX="444.0" layoutY="428.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/print.png" />
+         </image>
+      </ImageView>
+      <Separator layoutX="541.0" layoutY="116.0" orientation="VERTICAL" prefHeight="350.0" prefWidth="10.0" />
+      <TableView fx:id="kepegawaianTableView" layoutX="567.0" layoutY="113.0" prefHeight="350.0" prefWidth="593.0" stylesheets="@style.css">
+         <columns>
+            <TableColumn fx:id="nipPegawaiColumn" editable="false" prefWidth="75.0" text="NIP Pegawai" />
+            <TableColumn fx:id="namaPegawaiColumn" editable="false" prefWidth="91.0" text="Nama Pegawai" />
+            <TableColumn fx:id="tanggalLahirColumn" editable="false" prefWidth="83.0" text="Tanggal Lahir" />
+            <TableColumn fx:id="jenisKelaminColumn" editable="false" prefWidth="83.0" text="Jenis Kelamin" />
+            <TableColumn fx:id="golonganColumn" editable="false" prefWidth="59.0" text="Golongan" />
+            <TableColumn fx:id="addressColumn" editable="false" prefWidth="201.0" text="Alamat" />
+         </columns>
+      </TableView>
+      <Button layoutX="1058.0" layoutY="25.0" mnemonicParsing="false" onAction="#cancel" prefHeight="46.0" prefWidth="102.0" text="Kembali">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <padding>
+            <Insets left="30.0" />
+         </padding>
+      </Button>
+      <ImageView disable="true" fitHeight="31.0" fitWidth="26.0" layoutX="1067.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/logout.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
