@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="367.0" prefWidth="521.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javakominfo.controller.LoginController">
+   <children>
+      <ImageView fitHeight="106.0" fitWidth="152.0" layoutX="30.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/logokominfo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="151.0" layoutY="61.0" prefHeight="33.0" prefWidth="330.0" text="Login Kementerian Kominfo">
+         <font>
+            <Font name="Verdana Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="71.0" layoutY="178.0" text="NIP Pegawai : ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="71.0" layoutY="235.0" text="Kata Sandi : ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="usernameTextField" layoutX="186.0" layoutY="177.0" prefHeight="26.0" prefWidth="261.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <PasswordField fx:id="passwordField" layoutX="186.0" layoutY="234.0" prefHeight="26.0" prefWidth="261.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </PasswordField>
+      <Button fx:id="loginBtn" layoutX="186.0" layoutY="297.0" mnemonicParsing="false" onAction="#login" prefHeight="44.0" prefWidth="125.0" text="Masuk">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="cancelBtn" alignment="CENTER_RIGHT" cancelButton="true" layoutX="329.0" layoutY="297.0" mnemonicParsing="false" onAction="#cancel" prefHeight="44.0" prefWidth="118.0" text="Batal">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <padding>
+            <Insets right="25.0" />
+         </padding>
+      </Button>
+      <ImageView disable="true" fitHeight="31.0" fitWidth="26.0" layoutX="351.0" layoutY="306.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/logout.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
