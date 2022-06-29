@@ -4,14 +4,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javakominfo.backend.entity.Users;
 import javakominfo.backend.repository.UsersRepo;
 
+import java.util.Optional;
 import java.util.logging.Logger;
 import java.util.prefs.Preferences;
 
@@ -45,22 +44,32 @@ public class LoginController {
 
     if (user != null) {
       logger.info("Login success!");
-      Preferences prefs = Preferences.userNodeForPackage(LoginController.class);
-      prefs.put("nip", user.getUsername());
-      loginBtn.getScene().getWindow().hide();
-      AnchorPane root = null;
-      try {
-        root = (AnchorPane) FXMLLoader.load(getClass().getClassLoader().getResource("dashboardsuperadmin.fxml"));
-      } catch (Exception ex) {
-        logger.severe(ex.getLocalizedMessage());
+      if (showAlert("Login successfully!").get() == ButtonType.OK) {
+        Preferences prefs = Preferences.userNodeForPackage(LoginController.class);
+        prefs.put("nip", user.getUsername());
+        loginBtn.getScene().getWindow().hide();
+        AnchorPane root = null;
+        try {
+          root = (AnchorPane) FXMLLoader.load(getClass().getClassLoader().getResource("dashboardsuperadmin.fxml"));
+        } catch (Exception ex) {
+          logger.severe(ex.getLocalizedMessage());
+        }
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
       }
-      Scene scene = new Scene(root);
-      Stage stage = new Stage();
-      stage.setScene(scene);
-      stage.show();
     } else {
-      logger.info("Login gagal!");
+      logger.info("Login failed!");
+      showAlert("Login failed!");
     }
+  }
+
+  protected Optional<ButtonType> showAlert(String msg) {
+    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    alert.setHeaderText(null);
+    alert.setContentText(msg);
+    return alert.showAndWait();
   }
 
 }
