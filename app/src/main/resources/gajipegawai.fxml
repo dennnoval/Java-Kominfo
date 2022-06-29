@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="534.0" prefWidth="1210.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javakominfo.controller.GajiPegawaiController">
+  <children>
+    <ImageView fitHeight="106.0" fitWidth="152.0" layoutX="27.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@assets/logokominfo.png" />
+      </image>
+    </ImageView>
+    <Label alignment="CENTER" layoutX="145.0" layoutY="48.0" prefHeight="33.0" prefWidth="218.0" text="Gaji Kepegawaian">
+      <font>
+        <Font name="Verdana Bold" size="21.0" />
+      </font>
+    </Label>
+    <Label layoutX="34.0" layoutY="154.0" text="NIP Pegawai : ">
+      <font>
+        <Font size="16.0" />
+      </font>
+    </Label>
+    <TextField fx:id="nipPegawaiTextField" layoutX="213.0" layoutY="149.0" prefHeight="31.0" prefWidth="166.0">
+      <font>
+        <Font size="16.0" />
+      </font>
+    </TextField>
+    <Label layoutX="34.0" layoutY="197.0" text="Nama Pegawai :">
+      <font>
+        <Font size="16.0" />
+      </font>
+    </Label>
+    <TextField fx:id="namaPegawaiTextField" layoutX="213.0" layoutY="192.0" prefHeight="31.0" prefWidth="341.0">
+      <font>
+        <Font size="16.0" />
+      </font>
+    </TextField>
+    <Label layoutX="33.0" layoutY="236.0" text="Golongan : ">
+      <font>
+        <Font size="16.0" />
+      </font>
+    </Label>
+    <ComboBox fx:id="golonganComboBox" layoutX="213.0" layoutY="233.0" prefWidth="150.0" promptText="-- Golongan --" />
+    <TextField fx:id="gajiPokokTextField" layoutX="213.0" layoutY="271.0" onKeyReleased="#gajiPokokBtn_setTotalGaji" prefHeight="31.0" prefWidth="131.0">
+      <font>
+        <Font size="16.0" />
+      </font>
+    </TextField>
+    <Label layoutX="33.0" layoutY="276.0" text="Gaji Pokok : ">
+      <font>
+        <Font size="16.0" />
+      </font>
+    </Label>
+    <Label layoutX="32.0" layoutY="317.0" text="Tunjangan Transportasi :">
+      <font>
+        <Font size="16.0" />
+      </font>
+    </Label>
+    <TextField fx:id="tunjanganTransportTextField" layoutX="213.0" layoutY="312.0" onKeyReleased="#tunjanganTransportBtn_setTotalGaji" prefHeight="31.0" prefWidth="131.0">
+      <font>
+        <Font size="16.0" />
+      </font>
+    </TextField>
+    <Label layoutX="32.0" layoutY="357.0" text="Tunjangan Pulsa :">
+      <font>
+        <Font size="16.0" />
+      </font>
+    </Label>
+    <ComboBox fx:id="tunjanganPulsaComboBox" layoutX="213.0" layoutY="354.0" onAction="#tunjanganPulsaComboBox_setTotalGaji" prefHeight="26.0" prefWidth="131.0" promptText="-- Pulsa --">
+    </ComboBox>
+    <Label layoutX="32.0" layoutY="395.0" text="Total Gaji : ">
+      <font>
+        <Font size="16.0" />
+      </font>
+    </Label>
+    <Label fx:id="totalGajiLabel" layoutX="213.0" layoutY="396.0" text="0">
+      <font>
+        <Font size="16.0" />
+      </font>
+    </Label>
+    <Separator layoutX="561.0" layoutY="146.0" orientation="VERTICAL" prefHeight="350.0" prefWidth="10.0" />
+    <Label layoutX="582.0" layoutY="154.0" text="Cari data : ">
+      <font>
+        <Font size="16.0" />
+      </font>
+    </Label>
+    <TextField fx:id="cariTextField" layoutX="659.0" layoutY="149.0" prefHeight="31.0" prefWidth="267.0">
+      <font>
+        <Font size="16.0" />
+      </font>
+    </TextField>
+    <Button layoutX="939.0" layoutY="149.0" mnemonicParsing="false" onAction="#cariDataPegawai" prefHeight="31.0" prefWidth="71.0" text="Cari" />
+    <Group layoutX="34.0" layoutY="446.0">
+      <children>
+        <Button mnemonicParsing="false" onAction="#simpan" prefHeight="46.0" prefWidth="90.0" text="Simpan">
+          <font>
+            <Font size="16.0" />
+          </font>
+          <padding>
+            <Insets left="25.0" />
+          </padding>
+        </Button>
+        <ImageView disable="true" fitHeight="31.0" fitWidth="26.0" layoutX="7.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@assets/simpan.png" />
+          </image>
+        </ImageView>
+      </children>
+    </Group>
+    <TableView fx:id="gajiPegawaiTableView" layoutX="582.0" layoutY="196.0" prefHeight="300.0" prefWidth="593.0" stylesheets="@style.css">
+      <columns>
+        <TableColumn fx:id="nipPegawaiColumn" editable="false" prefWidth="75.0" text="NIP Pegawai" />
+        <TableColumn fx:id="namaPegawaiColumn" editable="false" prefWidth="91.0" text="Nama Pegawai" />
+        <TableColumn fx:id="golonganiColumn" editable="false" prefWidth="59.0" text="Golongan" />
+        <TableColumn fx:id="gajiPokokColumn" editable="false" prefWidth="75.0" text="Gaji Pokok" />
+        <TableColumn fx:id="tunjanganTransportColumn" editable="false" prefWidth="134.0" text="Tunjangan Transportasi" />
+        <TableColumn fx:id="tunjanganPulsaColumn" editable="false" prefWidth="100.0" text="Tunjangan Pulsa" />
+        <TableColumn fx:id="totalGajiColumn" editable="false" minWidth="1.0" prefWidth="58.0" text="Total Gaji" />
+      </columns>
+    </TableView>
+    <Group layoutX="198.0" layoutY="446.0">
+      <children>
+        <Button layoutX="-60.0" mnemonicParsing="false" onAction="#edit" prefHeight="46.0" prefWidth="90.0" text="Edit">
+          <font>
+            <Font size="16.0" />
+          </font>
+          <padding>
+            <Insets left="25.0" />
+          </padding>
+        </Button>
+        <ImageView disable="true" fitHeight="31.0" fitWidth="26.0" layoutX="-48.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@assets/edit.png" />
+          </image>
+        </ImageView>
+      </children>
+    </Group>
+    <Group layoutX="282.0" layoutY="446.0">
+      <children>
+        <Button layoutX="-40.0" mnemonicParsing="false" onAction="#hapus" prefHeight="46.0" prefWidth="90.0" text="Hapus">
+          <font>
+            <Font size="16.0" />
+          </font>
+          <padding>
+            <Insets left="20.0" />
+          </padding>
+        </Button>
+        <ImageView disable="true" fitHeight="31.0" fitWidth="26.0" layoutX="-35.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@assets/delete.png" />
+          </image>
+        </ImageView>
+      </children>
+    </Group>
+    <Group layoutX="405.0" layoutY="446.0">
+      <children>
+        <Button layoutX="-60.0" mnemonicParsing="false" onAction="#reset" prefHeight="46.0" prefWidth="90.0" text="Reset">
+          <font>
+            <Font size="16.0" />
+          </font>
+          <padding>
+            <Insets left="25.0" />
+          </padding>
+        </Button>
+        <ImageView disable="true" fitHeight="31.0" fitWidth="26.0" layoutX="-52.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@assets/reset.png" />
+          </image>
+        </ImageView>
+      </children>
+    </Group>
+    <Group layoutX="528.0" layoutY="446.0">
+      <children>
+        <Button layoutX="-80.0" mnemonicParsing="false" onAction="#cetak" prefHeight="46.0" prefWidth="90.0" text="Cetak">
+          <font>
+            <Font size="16.0" />
+          </font>
+          <padding>
+            <Insets left="25.0" />
+          </padding>
+        </Button>
+        <ImageView disable="true" fitHeight="31.0" fitWidth="26.0" layoutX="-74.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@assets/print.png" />
+          </image>
+        </ImageView>
+      </children>
+    </Group>
+    <Button layoutX="1073.0" layoutY="35.0" mnemonicParsing="false" onAction="#cancel" prefHeight="46.0" prefWidth="102.0" text="Kembali">
+      <font>
+        <Font size="16.0" />
+      </font>
+      <padding>
+        <Insets left="30.0" />
+      </padding>
+    </Button>
+    <ImageView disable="true" fitHeight="31.0" fitWidth="26.0" layoutX="1082.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@assets/logout.png" />
+      </image>
+    </ImageView>
+  </children>
+</AnchorPane>
