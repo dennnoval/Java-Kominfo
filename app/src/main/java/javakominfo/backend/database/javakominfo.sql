@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 05, 2022 at 05:57 AM
+-- Generation Time: Jun 29, 2022 at 03:26 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.28
 
@@ -37,6 +37,14 @@ CREATE TABLE `gaji` (
   `total_gaji` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `gaji`
+--
+
+INSERT INTO `gaji` (`NIP`, `nama`, `golongan`, `gapok`, `transport`, `pulsa`, `total_gaji`) VALUES
+('112233445566', 'John Doe', 'B', 5000000, 450000, 200000, 5650000),
+('88888888', 'Jane Doe', 'C', 3000000, 200000, 100000, 3300000);
+
 -- --------------------------------------------------------
 
 --
@@ -51,6 +59,14 @@ CREATE TABLE `pegawai` (
   `golongan` char(1) NOT NULL,
   `alamat` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pegawai`
+--
+
+INSERT INTO `pegawai` (`NIP`, `nama`, `tanggal_lahir`, `jenis_kelamin`, `golongan`, `alamat`) VALUES
+('55555555', 'gshahfgagagsh', '2002-02-12', 'P', 'C', 'ga ag ag gfg hgd hd hjd jhj hj d'),
+('88888888', 'vbmnvmmn', '2000-12-01', 'L', 'B', 'dybfciuhcuHIU FHWHF HO OEHOHOUF HOANS');
 
 -- --------------------------------------------------------
 
@@ -71,9 +87,13 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`username`, `password`, `email`, `role`, `createdAt`) VALUES
+('1122344', '1234', 'dasds@email.com', 'ADMIN', '2022-04-08'),
+('112234455', '1234', 'gggdsdsdsdsa@email.com', 'SUPERADMIN', '2022-04-08'),
+('445566', '1234', 'abc@email.com', 'GUEST', '2022-06-28'),
 ('AD', '1234', 'dasd@dd.com', 'ADMIN', '2022-04-04'),
 ('GS', '1234', 'gst@jj.com', 'GUEST', '2022-04-04'),
-('SA', '1234', 'dasdsad@dasdas.com', 'SUPERADMIN', '2022-04-03');
+('SA', '1234', 'dasdsad@dasdas.com', 'SUPERADMIN', '2022-04-03'),
+('SAD', '1234', 'dasdas@gmail.com', 'GUEST', '2022-04-08');
 
 -- --------------------------------------------------------
 
@@ -87,8 +107,16 @@ CREATE TABLE `v_a` (
   `NIP` varchar(15) NOT NULL,
   `nama_va` varchar(80) NOT NULL,
   `domain` varchar(255) NOT NULL,
-  `file_dir` varchar(150) NOT NULL
+  `file` longblob DEFAULT NULL,
+  `file_dir` varchar(64) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `v_a`
+--
+
+INSERT INTO `v_a` (`ID`, `tanggal`, `NIP`, `nama_va`, `domain`, `file`, `file_dir`) VALUES
+(5, '2022-01-10', 'SA', 'Abcd Vulnerability', 'https://ibm.com', NULL, '/Users/dennnoval/Downloads/Exam-Transcript.pdf');
 
 --
 -- Indexes for dumped tables
@@ -126,7 +154,7 @@ ALTER TABLE `v_a`
 -- AUTO_INCREMENT for table `v_a`
 --
 ALTER TABLE `v_a`
-  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
