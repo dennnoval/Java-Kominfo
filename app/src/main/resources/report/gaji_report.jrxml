@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="gaji_report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2673881a-741a-4b66-b5d0-edc385f40575">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Java_Kominfo"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM Gaji]]>
+	</queryString>
+	<field name="NIP" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NIP"/>
+		<property name="com.jaspersoft.studio.field.label" value="NIP"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="gaji"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nama"/>
+		<property name="com.jaspersoft.studio.field.label" value="nama"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="gaji"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="golongan" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="golongan"/>
+		<property name="com.jaspersoft.studio.field.label" value="golongan"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="gaji"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="gapok" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="gapok"/>
+		<property name="com.jaspersoft.studio.field.label" value="gapok"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="gaji"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="transport" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="transport"/>
+		<property name="com.jaspersoft.studio.field.label" value="transport"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="gaji"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pulsa" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="pulsa"/>
+		<property name="com.jaspersoft.studio.field.label" value="pulsa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="gaji"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_gaji" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="total_gaji"/>
+		<property name="com.jaspersoft.studio.field.label" value="total_gaji"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="gaji"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="187" y="27" width="210" height="30" uuid="afb4f6b8-7220-431b-8af1-e66c3aba9fdd"/>
+				<textElement>
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Gaji - Pegawai]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="4" width="107" height="75" uuid="49c8e03f-9826-42f5-bd1e-f3a3ddb0803e"/>
+				<imageExpression><![CDATA[getClass().getResource("javakominfo/imgclass/logo.png")]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="57" splitType="Stretch">
+			<textField>
+				<reportElement x="453" y="16" width="100" height="30" uuid="87278c10-6a6f-43ab-81ee-4c1a86d2b223"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="16" width="100" height="30" uuid="12ae5696-442e-4e3e-a82a-23ceb9e67acf"/>
+				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="16" width="100" height="30" uuid="3865e8ba-890d-4e04-bb34-c07f8ee87cd9"/>
+				<text><![CDATA[Nama Admin :]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="81" height="30" uuid="dc828618-117e-4174-bd9c-b94d5584bb97">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7d41e719-ff4d-44ea-aae3-94c72f1d411f"/>
+				</reportElement>
+				<text><![CDATA[NIP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="81" y="0" width="79" height="30" uuid="17a9a793-f706-4e44-b997-01f94585941c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8d45e55f-6147-41b6-ae90-4f7753c07675"/>
+				</reportElement>
+				<text><![CDATA[nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="0" width="79" height="30" uuid="54b200b1-f798-4c77-81dd-4c056cad8771">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4d6c693f-2cfd-406d-8f96-e67cb46d94ed"/>
+				</reportElement>
+				<text><![CDATA[golongan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="239" y="0" width="79" height="30" uuid="ec499f12-0ab5-4d4a-a858-934ee4be03e4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="04f1bd8e-e0ee-4d62-b47b-4df0addcbdd8"/>
+				</reportElement>
+				<text><![CDATA[gapok]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="318" y="0" width="79" height="30" uuid="30fab988-3d02-4211-a573-475250f009dd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="eeb87a72-0ec9-4ba3-850b-39cdb9f8a315"/>
+				</reportElement>
+				<text><![CDATA[transport]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="397" y="0" width="79" height="30" uuid="ca85305b-e52d-4022-b24f-fde692ef0fcd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2a3fc20b-2296-4c91-a8b6-90986d6aba5b"/>
+				</reportElement>
+				<text><![CDATA[pulsa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="476" y="0" width="79" height="30" uuid="aea09190-ce3f-4eb1-867f-2896e407aea7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="78d0d74a-974b-4263-a98b-0d23e14b464e"/>
+				</reportElement>
+				<text><![CDATA[total_gaji]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="81" height="30" uuid="e58c2f5e-4ba9-4e1e-a7b0-8f0ff6c469e3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7d41e719-ff4d-44ea-aae3-94c72f1d411f"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{NIP}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="81" y="0" width="79" height="30" uuid="c8307c7a-0bc0-413c-80c3-c132152bb0d6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8d45e55f-6147-41b6-ae90-4f7753c07675"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="0" width="79" height="30" uuid="5dd70fc5-b232-408d-875b-2c80104d569b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4d6c693f-2cfd-406d-8f96-e67cb46d94ed"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{golongan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="239" y="0" width="79" height="30" uuid="c1a1521b-e05f-4d94-b3f4-78104a69786c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="04f1bd8e-e0ee-4d62-b47b-4df0addcbdd8"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{gapok}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="318" y="0" width="79" height="30" uuid="02862a3e-8835-4583-935c-a914fcde23e1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="eeb87a72-0ec9-4ba3-850b-39cdb9f8a315"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{transport}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="397" y="0" width="79" height="30" uuid="fb8d7dec-fc34-4a3f-8e0d-bcf7ef8466b1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2a3fc20b-2296-4c91-a8b6-90986d6aba5b"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{pulsa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="476" y="0" width="79" height="30" uuid="1179c382-2e33-462f-ae53-48712381b8ae">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="78d0d74a-974b-4263-a98b-0d23e14b464e"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{total_gaji}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="172" y="22" width="231" height="20" uuid="ed0b0d66-2609-4936-9484-5ff393ad86d7"/>
+				<text><![CDATA[Copyright Team KKP Unindra - 2021]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
