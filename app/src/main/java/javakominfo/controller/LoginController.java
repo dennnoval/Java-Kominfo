@@ -50,7 +50,7 @@ public class LoginController {
         loginBtn.getScene().getWindow().hide();
         AnchorPane root = null;
         try {
-          root = (AnchorPane) FXMLLoader.load(getClass().getClassLoader().getResource("dashboardsuperadmin.fxml"));
+          root = (AnchorPane) FXMLLoader.load(getClass().getClassLoader().getResource("dashboardadmin.fxml"));
         } catch (Exception ex) {
           logger.severe(ex.getLocalizedMessage());
         }
