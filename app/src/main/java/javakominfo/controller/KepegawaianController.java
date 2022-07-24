@@ -82,7 +82,7 @@ public class KepegawaianController implements Initializable {
 
   @FXML
   void cancel(ActionEvent event) {
-    cancelBtn(event, "dashboardsuperadmin.fxml");
+    cancelBtn(event, "dashboardadmin.fxml");
   }
 
   @FXML
