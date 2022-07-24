@@ -34,13 +34,13 @@ public class UserRegistrationController implements Initializable {
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
-    roleComboBox.getItems().addAll(new String[]{"SUPERADMIN", "ADMIN", "USER"});
+    roleComboBox.getItems().addAll(new String[]{"ADMIN", "USER"});
     usersRepo = new UsersRepo();
   }
 
   @FXML
   void cancel(ActionEvent event) {
-    cancelBtn(event, "dashboardsuperadmin.fxml");
+    cancelBtn(event, "dashboardadmin.fxml");
   }
 
   @FXML
