@@ -3,13 +3,22 @@ package javakominfo.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javakominfo.backend.entity.Role;
+import javakominfo.backend.entity.Users;
+import javakominfo.backend.repository.UsersRepo;
 
-public class DashboardAdminController {
+import java.net.URL;
+import java.util.ResourceBundle;
+import java.util.prefs.Preferences;
+
+public class DashboardAdminController implements Initializable {
 
   @FXML
   private Button gajiBtn;
@@ -25,6 +34,24 @@ public class DashboardAdminController {
 
   @FXML
   private Button vaBtn;
+
+  @FXML
+  private Label titleLabel;
+
+  @Override
+  public void initialize(URL location, ResourceBundle resources) {
+    Preferences prefs = Preferences.userNodeForPackage(LoginController.class);
+    String nip = prefs.get("nip", null);
+    Users usr = new UsersRepo().readById(nip);
+    Role role = usr.getRole();
+    if (role == Role.GUEST) {
+      gajiBtn.setDisable(true);
+      pegawaiBtn.setDisable(true);
+      registrationBtn.setDisable(true);
+      String title = titleLabel.getText().replace("Admin", "Guest");
+      titleLabel.setText(title);
+    }
+  }
 
   @FXML
   void logout(ActionEvent event) {
