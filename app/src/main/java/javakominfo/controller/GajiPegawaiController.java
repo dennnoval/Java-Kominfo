@@ -107,7 +107,7 @@ public class GajiPegawaiController implements Initializable {
   @FXML
   void cetak(ActionEvent event) {
     ReportUtil reportUtil = new ReportUtil();
-    String file = getClass().getClassLoader().getResource("report/pegawai_report.jrxml").getFile();
+    String file = getClass().getClassLoader().getResource("report/gaji_report.jrxml").getFile();
     reportUtil.printReport(file);
   }
 
