@@ -48,7 +48,7 @@ public class DashboardAdminController implements Initializable {
       gajiBtn.setDisable(true);
       pegawaiBtn.setDisable(true);
       registrationBtn.setDisable(true);
-      String title = titleLabel.getText().replace("Admin", "Guest");
+      String title = titleLabel.getText().replace("Admin", "Karyawan");
       titleLabel.setText(title);
     }
   }
