@@ -21,7 +21,7 @@
         <Image url="@assets/logokominfo.png" />
       </image>
     </ImageView>
-    <Label alignment="CENTER" layoutX="145.0" layoutY="48.0" prefHeight="33.0" prefWidth="218.0" text="Gaji Kepegawaian">
+    <Label alignment="CENTER" layoutX="145.0" layoutY="48.0" prefHeight="33.0" prefWidth="218.0" text="Data Gaji Pegawai">
       <font>
         <Font name="Verdana Bold" size="21.0" />
       </font>
