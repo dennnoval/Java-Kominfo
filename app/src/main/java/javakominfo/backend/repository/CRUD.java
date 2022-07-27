@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface CRUD<T> {
 
-	public void create(T t);
+	public boolean create(T t);
 
 	public List<T> read();
 
