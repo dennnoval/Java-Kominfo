@@ -17,7 +17,7 @@ public class Users implements Serializable {
 		username = u;
 		password = p;
 		email = e;
-		role = r.equals("ADMIN") ? Role.ADMIN : Role.GUEST;
+		role = r.equals("ADMIN") ? Role.ADMIN : Role.KARYAWAN;
 		createdAt = new Date(System.currentTimeMillis());
 	}
 
@@ -25,7 +25,7 @@ public class Users implements Serializable {
 		username = u;
 		password = p;
 		email = e;
-		role = r.equals("ADMIN") ? Role.ADMIN : Role.GUEST;
+		role = r.equals("ADMIN") ? Role.ADMIN : Role.KARYAWAN;
 		createdAt = ca;
 	}
 
