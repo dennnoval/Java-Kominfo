@@ -128,7 +128,7 @@
             <Image url="@assets/reset.png" />
          </image>
       </ImageView>
-      <Button layoutX="441.0" layoutY="375.0" mnemonicParsing="false" onAction="#cetak" prefHeight="46.0" prefWidth="90.0" text="Cetak">
+      <Button fx:id="btnCetak" layoutX="441.0" layoutY="375.0" mnemonicParsing="false" onAction="#cetak" prefHeight="46.0" prefWidth="90.0" text="Cetak">
          <font>
             <Font size="16.0" />
          </font>
