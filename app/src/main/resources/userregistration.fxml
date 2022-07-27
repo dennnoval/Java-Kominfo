@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="417.0" prefWidth="418.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javakominfo.controller.UserRegistrationController">
    <children>
       <ImageView fitHeight="106.0" fitWidth="152.0" layoutX="20.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
@@ -23,11 +22,6 @@
             <Font name="Verdana Bold" size="21.0" />
          </font>
       </Label>
-      <TextField fx:id="nipPegawaiTextField" layoutX="138.0" layoutY="155.0" prefHeight="31.0" prefWidth="242.0">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </TextField>
       <Label layoutX="33.0" layoutY="160.0" text="NIP Pegawai : ">
          <font>
             <Font size="16.0" />
@@ -85,5 +79,6 @@
             <Image url="@assets/logout.png" />
          </image>
       </ImageView>
+      <ComboBox fx:id="nipComboBox" layoutX="139.0" layoutY="158.0" prefHeight="26.0" prefWidth="242.0" promptText="-- Pilih NIP Pegawai --" />
    </children>
 </AnchorPane>
