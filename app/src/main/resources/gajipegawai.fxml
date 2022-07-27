@@ -101,9 +101,9 @@
       </font>
     </TextField>
     <Button layoutX="939.0" layoutY="149.0" mnemonicParsing="false" onAction="#cariDataPegawai" prefHeight="31.0" prefWidth="71.0" text="Cari" />
-    <Group layoutX="34.0" layoutY="446.0">
+    <Group fx:id="btnSimpanGroup" layoutX="34.0" layoutY="446.0">
       <children>
-        <Button mnemonicParsing="false" onAction="#simpan" prefHeight="46.0" prefWidth="90.0" text="Simpan">
+        <Button fx:id="btnSimpan" mnemonicParsing="false" onAction="#simpan" prefHeight="46.0" prefWidth="90.0" text="Simpan">
           <font>
             <Font size="16.0" />
           </font>
@@ -131,7 +131,7 @@
     </TableView>
     <Group layoutX="198.0" layoutY="446.0">
       <children>
-        <Button layoutX="-60.0" mnemonicParsing="false" onAction="#edit" prefHeight="46.0" prefWidth="90.0" text="Edit">
+        <Button fx:id="btnEdit" layoutX="-60.0" mnemonicParsing="false" onAction="#edit" prefHeight="46.0" prefWidth="90.0" text="Edit">
           <font>
             <Font size="16.0" />
           </font>
@@ -146,9 +146,9 @@
         </ImageView>
       </children>
     </Group>
-    <Group layoutX="282.0" layoutY="446.0">
+    <Group fx:id="btnHapusGroup" layoutX="282.0" layoutY="446.0">
       <children>
-        <Button layoutX="-40.0" mnemonicParsing="false" onAction="#hapus" prefHeight="46.0" prefWidth="90.0" text="Hapus">
+        <Button fx:id="btnHapus" layoutX="-40.0" mnemonicParsing="false" onAction="#hapus" prefHeight="46.0" prefWidth="90.0" text="Hapus">
           <font>
             <Font size="16.0" />
           </font>
