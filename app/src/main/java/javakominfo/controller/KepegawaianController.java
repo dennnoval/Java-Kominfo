@@ -23,6 +23,7 @@ import javakominfo.backend.repository.GajiRepo;
 import javakominfo.backend.repository.PegawaiRepo;
 import javakominfo.backend.utility.ReportUtil;
 
+import java.io.InputStream;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.Date;
@@ -90,8 +91,8 @@ public class KepegawaianController implements Initializable {
   @FXML
   void cetak(ActionEvent event) {
     ReportUtil reportUtil = new ReportUtil();
-    String file = getClass().getClassLoader().getResource("report/pegawai_report.jrxml").getFile();
-    reportUtil.printReport(file);
+    InputStream fileStream = getClass().getClassLoader().getResourceAsStream("report/pegawai_report.jrxml");
+    reportUtil.printReport(fileStream);
   }
 
   @FXML
