@@ -20,7 +20,7 @@ public class GajiRepo implements CRUD<Gaji> {
 	}
 
 	@Override
-	public void create(Gaji g) {
+	public boolean create(Gaji g) {
 		try {
 			ps = conn.prepareStatement("INSERT INTO "+TABLE+" VALUES(?, ?, ?, ?, ?, ?, ?);");
 			ps.setString(1, g.getNIP());
@@ -31,9 +31,11 @@ public class GajiRepo implements CRUD<Gaji> {
 			ps.setInt(6, g.getPulsa());
 			ps.setInt(7, g.getTotalGaji());
 			ps.execute();
+			return true;
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+		return false;
 	}
 
 	@Override
