@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -73,15 +74,27 @@ public class GajiPegawaiController implements Initializable {
   @FXML
   private TableColumn<Gaji, String> totalGajiColumn;
 
+  @FXML
+  private Group btnSimpanGroup;
+
+  @FXML
+  private Button btnEdit;
+
+  @FXML
+  private Group btnHapusGroup;
+
   private GajiRepo gajiRepo;
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
+    btnSimpanGroup.setVisible(false);
+    btnHapusGroup.setVisible(false);
+    setDisableCrudButton(true);
+    nipPegawaiTextField.setDisable(true);
+    namaPegawaiTextField.setDisable(true);
+    golonganComboBox.setDisable(true);
     tunjanganPulsaComboBox.getItems().addAll(new String[]{"100000", "200000"});
     golonganComboBox.getItems().addAll(new String[]{"A", "B", "C"});
-    Preferences prefs = Preferences.userNodeForPackage(LoginController.class);
-    String nip = prefs.get("nip", null);
-    nipPegawaiTextField.setText(nip);
     gajiRepo = new GajiRepo();
     initTable();
     tableItemClickListener();
@@ -116,6 +129,7 @@ public class GajiPegawaiController implements Initializable {
     gajiRepo.update(getGajiByForm());
     clearFormField();
     initTable();
+    setDisableCrudButton(true);
   }
 
   @FXML
@@ -128,11 +142,13 @@ public class GajiPegawaiController implements Initializable {
     gajiRepo.delete(getGajiByForm());
     clearFormField();
     initTable();
+    setDisableCrudButton(true);
   }
 
   @FXML
   void reset(ActionEvent event) {
     clearFormField();
+    setDisableCrudButton(true);
   }
 
   @FXML
@@ -145,6 +161,7 @@ public class GajiPegawaiController implements Initializable {
     gajiRepo.create(getGajiByForm());
     clearFormField();
     initTable();
+    setDisableCrudButton(true);
   }
 
   @FXML
@@ -209,6 +226,8 @@ public class GajiPegawaiController implements Initializable {
       gajiPokokTextField.setText(String.valueOf(gaji.getGapok()));
       tunjanganTransportTextField.setText(String.valueOf(gaji.getTransport()));
       tunjanganPulsaComboBox.getSelectionModel().select(String.valueOf(gaji.getPulsa()));
+      totalGajiLabel.setText(String.valueOf(gaji.getTotalGaji()));
+      setDisableCrudButton(false);
     });
   }
 
@@ -220,6 +239,7 @@ public class GajiPegawaiController implements Initializable {
     gajiPokokTextField.setText("");
     tunjanganTransportTextField.setText("");
     tunjanganPulsaComboBox.getSelectionModel().select(0);
+    totalGajiLabel.setText("0");
   }
 
   protected Gaji getGajiByForm() {
@@ -230,6 +250,12 @@ public class GajiPegawaiController implements Initializable {
     int transport = Integer.valueOf(tunjanganTransportTextField.getText());
     int pulsa = Integer.valueOf(tunjanganPulsaComboBox.getSelectionModel().getSelectedItem());
     return new Gaji(NIP, nama, golongan, gapok, transport, pulsa);
+  }
+
+  protected void setDisableCrudButton(boolean state) {
+    // btnSimpanGroup.setDisable(state);
+    btnEdit.setDisable(state);
+    // btnHapusGroup.setDisable(state);
   }
 
 }
