@@ -56,11 +56,11 @@
 	<title>
 		<band height="79" splitType="Stretch">
 			<staticText>
-				<reportElement x="187" y="27" width="210" height="30" uuid="afb4f6b8-7220-431b-8af1-e66c3aba9fdd"/>
+				<reportElement x="120" y="27" width="380" height="30" uuid="afb4f6b8-7220-431b-8af1-e66c3aba9fdd"/>
 				<textElement>
 					<font size="20" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Data Gaji - Pegawai]]></text>
+				<text><![CDATA[Laporan Gaji Pegawai Kominfo]]></text>
 			</staticText>
 			<image>
 				<reportElement x="0" y="4" width="107" height="75" uuid="49c8e03f-9826-42f5-bd1e-f3a3ddb0803e"/>
@@ -74,14 +74,6 @@
 				<reportElement x="453" y="16" width="100" height="30" uuid="87278c10-6a6f-43ab-81ee-4c1a86d2b223"/>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="100" y="16" width="100" height="30" uuid="12ae5696-442e-4e3e-a82a-23ceb9e67acf"/>
-				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement x="0" y="16" width="100" height="30" uuid="3865e8ba-890d-4e04-bb34-c07f8ee87cd9"/>
-				<text><![CDATA[Nama Admin :]]></text>
-			</staticText>
 		</band>
 	</pageHeader>
 	<columnHeader>
