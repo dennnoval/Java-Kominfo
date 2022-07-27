@@ -22,7 +22,7 @@
             <Image url="@assets/logokominfo.png" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" layoutX="135.0" layoutY="48.0" prefHeight="33.0" prefWidth="160.0" text="Kepegawaian">
+      <Label alignment="CENTER" layoutX="135.0" layoutY="48.0" prefHeight="33.0" prefWidth="190.0" text="Data Pegawai">
          <font>
             <Font name="Verdana Bold" size="21.0" />
          </font>
