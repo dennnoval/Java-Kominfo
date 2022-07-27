@@ -20,7 +20,7 @@
             <Font name="Verdana Bold" size="21.0" />
          </font>
       </Label>
-      <Button fx:id="gajiBtn" layoutX="161.0" layoutY="160.0" mnemonicParsing="false" onAction="#viewGajiPegawaiFrame" prefHeight="60.0" prefWidth="190.0" text="Gaji Pegawai">
+      <Button fx:id="gajiBtn" layoutX="364.0" layoutY="160.0"  mnemonicParsing="false" onAction="#viewGajiPegawaiFrame" prefHeight="60.0" prefWidth="190.0" text="Gaji Pegawai">
          <font>
             <Font size="18.0" />
          </font>
@@ -28,7 +28,7 @@
             <Insets left="35.0" />
          </padding>
       </Button>
-      <Button fx:id="pegawaiBtn" layoutX="364.0" layoutY="160.0" mnemonicParsing="false" onAction="#viewKominfoPegawaiFrame" prefHeight="60.0" prefWidth="196.0" text="Kominfo Pegawai">
+      <Button fx:id="pegawaiBtn"  layoutX="161.0" layoutY="160.0" mnemonicParsing="false" onAction="#viewKominfoPegawaiFrame" prefHeight="60.0" prefWidth="196.0" text="Kominfo Pegawai">
          <font>
             <Font size="18.0" />
          </font>
@@ -65,7 +65,12 @@
             <Image url="@assets/bugs.png" />
          </image>
       </ImageView>
-      <ImageView disable="true" fitHeight="31.0" fitWidth="26.0" layoutX="192.0" layoutY="177.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView disable="true" fitHeight="31.0" fitWidth="26.0" layoutX="178.0" layoutY="177.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/human.png" />
+         </image>
+      </ImageView>
+      <ImageView disable="true" fitHeight="31.0" fitWidth="26.0" layoutX="390.0" layoutY="177.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@assets/money.png" />
          </image>
@@ -78,11 +83,6 @@
       <ImageView disable="true" fitHeight="31.0" fitWidth="26.0" layoutX="192.0" layoutY="323.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@assets/create.png" />
-         </image>
-      </ImageView>
-      <ImageView disable="true" fitHeight="31.0" fitWidth="26.0" layoutX="377.0" layoutY="177.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@assets/human.png" />
          </image>
       </ImageView>
    </children>
