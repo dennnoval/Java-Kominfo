@@ -20,7 +20,7 @@ public class UsersRepo implements CRUD<Users> {
 	}
 
 	@Override
-	public void create(Users u) {
+	public boolean create(Users u) {
 		try {
 			ps = conn.prepareStatement("INSERT INTO "+TABLE+" VALUES(?, ?, ?, ?, ?);");
 			ps.setString(1, u.getUsername());
@@ -29,9 +29,11 @@ public class UsersRepo implements CRUD<Users> {
 			ps.setString(4, u.getRole().toString());
 			ps.setDate(5, u.getCreatedAt());
 			ps.execute();
+			return true;
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+		return false;
 	}
 
 	@Override
