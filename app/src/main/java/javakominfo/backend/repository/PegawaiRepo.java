@@ -20,7 +20,7 @@ public class PegawaiRepo implements CRUD<Pegawai> {
 	}
 
 	@Override
-	public void create(Pegawai p) {
+	public boolean create(Pegawai p) {
 		try {
 			ps = conn.prepareStatement("INSERT INTO "+TABLE+" VALUES(?, ?, ?, ?, ?, ?);");
 			ps.setString(1, p.getNIP());
@@ -30,9 +30,11 @@ public class PegawaiRepo implements CRUD<Pegawai> {
 			ps.setString(5, String.valueOf(p.getGolongan()));
 			ps.setString(6, p.getAlamat());
 			ps.execute();
+			return true;
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+		return false;
 	}
 
 	@Override
