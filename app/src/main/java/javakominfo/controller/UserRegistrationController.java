@@ -6,14 +6,18 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javakominfo.backend.entity.Users;
+import javakominfo.backend.repository.PegawaiRepo;
 import javakominfo.backend.repository.UsersRepo;
 
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class UserRegistrationController implements Initializable {
@@ -22,7 +26,7 @@ public class UserRegistrationController implements Initializable {
   private TextField emailTextField;
 
   @FXML
-  private TextField nipPegawaiTextField;
+  private ComboBox<String> nipComboBox;
 
   @FXML
   private TextField passwordTextField;
@@ -34,7 +38,10 @@ public class UserRegistrationController implements Initializable {
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
-    roleComboBox.getItems().addAll(new String[]{"ADMIN", "USER"});
+    new PegawaiRepo().read().forEach(pegawai -> {
+      nipComboBox.getItems().add(pegawai.getNIP());
+    });
+    roleComboBox.getItems().addAll(new String[]{"ADMIN", "KARYAWAN"});
     usersRepo = new UsersRepo();
   }
 
@@ -45,12 +52,16 @@ public class UserRegistrationController implements Initializable {
 
   @FXML
   void simpan(ActionEvent event) {
-    String username = nipPegawaiTextField.getText();
+    String username = nipComboBox.getSelectionModel().getSelectedItem();
+    System.out.println(username);
     String password = passwordTextField.getText();
     String email = emailTextField.getText();
     String role = roleComboBox.getSelectionModel().getSelectedItem();
     Users user = new Users(username, password, email, role);
-    usersRepo.create(user);
+    boolean isCreated = usersRepo.create(user);
+    if (isCreated)
+      showAlert("Registrasi user baru berhasil");
+    else showAlert("Registrasi gagal!");
   }
 
   protected void cancelBtn(ActionEvent evt, String fxml) {
@@ -67,6 +78,13 @@ public class UserRegistrationController implements Initializable {
     Scene scene = new Scene(root);
     stage.setScene(scene);
     stage.show();
+  }
+
+  protected Optional<ButtonType> showAlert(String msg) {
+    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    alert.setHeaderText(null);
+    alert.setContentText(msg);
+    return alert.showAndWait();
   }
 
 }
