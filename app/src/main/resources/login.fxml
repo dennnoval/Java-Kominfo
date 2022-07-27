@@ -37,7 +37,7 @@
             <Font size="16.0" />
          </font>
       </TextField>
-      <PasswordField fx:id="passwordField" layoutX="186.0" layoutY="234.0" prefHeight="26.0" prefWidth="261.0">
+      <PasswordField fx:id="passwordField" layoutX="186.0" layoutY="234.0" prefHeight="26.0" prefWidth="261.0" onKeyPressed="#passwordFieldOnEnterKeyPressed">
          <font>
             <Font size="16.0" />
          </font>
