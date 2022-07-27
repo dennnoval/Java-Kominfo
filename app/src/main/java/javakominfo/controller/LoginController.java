@@ -3,14 +3,19 @@ package javakominfo.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javakominfo.backend.entity.Users;
 import javakominfo.backend.repository.UsersRepo;
 
+import java.net.URL;
 import java.util.Optional;
+import java.util.ResourceBundle;
 import java.util.logging.Logger;
 import java.util.prefs.Preferences;
 
@@ -36,10 +41,21 @@ public class LoginController {
   }
 
   @FXML
+  void passwordFieldOnEnterKeyPressed(KeyEvent keyEvent) {
+    if (keyEvent.getCode() == KeyCode.ENTER) {
+      loginAction();
+    }
+  }
+
+  @FXML
   void login(ActionEvent event) {
-    UsersRepo repo = new UsersRepo();
+    loginAction();
+  }
+
+  protected void loginAction() {
     String username = usernameTextField.getText();
     String password = passwordField.getText();
+    UsersRepo repo = new UsersRepo();
     Users user = repo.readByUsernameAndPassword(username, password);
 
     if (user != null) {
