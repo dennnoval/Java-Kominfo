@@ -10,6 +10,7 @@ import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.view.JasperViewer;
 
 import java.io.File;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.util.HashMap;
 
@@ -21,15 +22,13 @@ public class ReportUtil {
 		conn = new DB().connect();
 	}
 
-  public void printReport(String file) {
+  public void printReport(InputStream fileStream) {
     try {
       HashMap<String, Object> parameter = new HashMap<>();
-      File report_file = new File(file);
-      JasperDesign design = JRXmlLoader.load(report_file);
-      JasperReport jasperReport = JasperCompileManager.compileReport(design);
+      JasperReport jasperReport = JasperCompileManager.compileReport(fileStream);
       JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameter, conn);
       JasperViewer.viewReport(jasperPrint, false);
-      JasperViewer.setDefaultLookAndFeelDecorated(true); 
+      JasperViewer.setDefaultLookAndFeelDecorated(true);
     } catch(Exception | ExceptionInInitializerError e){
       e.printStackTrace();
     }
