@@ -24,9 +24,9 @@ public class V_ARepo implements CRUD<V_A> {
 	}
 
 	@Override
-	public void create(V_A v_a) {
+	public boolean create(V_A v_a) {
 		try {
-			ps = conn.prepareStatement("INSERT INTO "+TABLE+" (tanggal, NIP, nama_va, domain, file, file_dir) VALUES(?, ?, ?, ?, ?)");
+			ps = conn.prepareStatement("INSERT INTO "+TABLE+" (tanggal, NIP, nama_va, domain, file, file_dir) VALUES(?, ?, ?, ?, ?, ?);");
 			ps.setDate(1, java.sql.Date.valueOf(v_a.getTanggal()));
 			ps.setString(2, v_a.getNIP());
 			ps.setString(3, v_a.getNamaV_A());
@@ -34,9 +34,11 @@ public class V_ARepo implements CRUD<V_A> {
 			ps.setBinaryStream(5, new FileInputStream(v_a.getFile()));
 			ps.setString(6, v_a.getFileDir());
 			ps.execute();
+			return true;
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+		return false;
 	}
 
 	@Override
@@ -105,7 +107,7 @@ public class V_ARepo implements CRUD<V_A> {
 	public void delete(V_A v_a) {
 		try {
 			ps = conn.prepareStatement("DELETE FROM "+TABLE+" WHERE ID=? AND NIP=?;");
-			ps.setString(1, v_a.getID());
+			ps.setInt(1, Integer.parseInt(v_a.getID()));
 			ps.setString(2, v_a.getNIP());
 			ps.executeUpdate();
 		} catch(Exception e) {
