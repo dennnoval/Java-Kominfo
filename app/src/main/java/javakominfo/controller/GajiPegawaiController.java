@@ -18,6 +18,7 @@ import javakominfo.backend.entity.Gaji;
 import javakominfo.backend.repository.GajiRepo;
 import javakominfo.backend.utility.ReportUtil;
 
+import java.io.InputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.prefs.Preferences;
@@ -120,8 +121,8 @@ public class GajiPegawaiController implements Initializable {
   @FXML
   void cetak(ActionEvent event) {
     ReportUtil reportUtil = new ReportUtil();
-    String file = getClass().getClassLoader().getResource("report/gaji_report.jrxml").getFile();
-    reportUtil.printReport(file);
+    InputStream fileStream = getClass().getClassLoader().getResourceAsStream("report/gaji_report.jrxml");
+    reportUtil.printReport(fileStream);
   }
 
   @FXML
