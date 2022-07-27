@@ -17,7 +17,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javakominfo.backend.entity.Gaji;
 import javakominfo.backend.entity.Pegawai;
+import javakominfo.backend.repository.GajiRepo;
 import javakominfo.backend.repository.PegawaiRepo;
 import javakominfo.backend.utility.ReportUtil;
 
@@ -114,6 +116,10 @@ public class KepegawaianController implements Initializable {
   @FXML
   void simpan(ActionEvent event) {
     pegawaiRepo.create(getEntityByForm());
+    new GajiRepo().create(new Gaji(
+      getEntityByForm().getNIP(), getEntityByForm().getNama(),
+      getEntityByForm().getGolongan(), 0, 0, 0
+    ));
     clearFormField();
     initTable();
   }
