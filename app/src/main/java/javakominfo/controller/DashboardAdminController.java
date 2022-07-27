@@ -44,7 +44,7 @@ public class DashboardAdminController implements Initializable {
     String nip = prefs.get("nip", null);
     Users usr = new UsersRepo().readById(nip);
     Role role = usr.getRole();
-    if (role == Role.GUEST) {
+    if (role == Role.KARYAWAN) {
       gajiBtn.setDisable(true);
       pegawaiBtn.setDisable(true);
       registrationBtn.setDisable(true);
