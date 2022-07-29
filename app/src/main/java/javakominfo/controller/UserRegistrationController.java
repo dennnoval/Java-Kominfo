@@ -10,6 +10,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javakominfo.backend.entity.Users;
@@ -38,11 +39,11 @@ public class UserRegistrationController implements Initializable {
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
-    new PegawaiRepo().read().forEach(pegawai -> {
-      nipComboBox.getItems().add(pegawai.getNIP());
-    });
-    roleComboBox.getItems().addAll(new String[]{"ADMIN", "KARYAWAN"});
     usersRepo = new UsersRepo();
+    new PegawaiRepo().read().stream()
+      .filter(pegawai -> usersRepo.read().stream().noneMatch(user -> pegawai.getNIP().equals(user.getUsername())))
+      .forEach(pegawai -> nipComboBox.getItems().add(pegawai.getNIP()));
+    roleComboBox.getItems().addAll(new String[]{"ADMIN", "KARYAWAN"});
   }
 
   @FXML
@@ -62,6 +63,13 @@ public class UserRegistrationController implements Initializable {
     if (isCreated)
       showAlert("Registrasi user baru berhasil");
     else showAlert("Registrasi gagal!");
+  }
+
+  @FXML
+  void emailTextFieldOnKeyReleased(KeyEvent keyEvent) {
+    if (emailTextField.getText().matches("^[a-z0-9_]+@\\w+.[a-z]+$")) {
+      System.out.println(emailTextField.getText());
+    }
   }
 
   protected void cancelBtn(ActionEvent evt, String fxml) {
