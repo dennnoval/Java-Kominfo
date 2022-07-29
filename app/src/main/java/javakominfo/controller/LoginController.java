@@ -59,7 +59,6 @@ public class LoginController {
     Users user = repo.readByUsernameAndPassword(username, password);
 
     if (user != null) {
-      logger.info("Login success!");
       if (showAlert("Login successfully!").get() == ButtonType.OK) {
         Preferences prefs = Preferences.userNodeForPackage(LoginController.class);
         prefs.put("nip", user.getUsername());
@@ -76,7 +75,6 @@ public class LoginController {
         stage.show();
       }
     } else {
-      logger.info("Login failed!");
       showAlert("Login failed!");
     }
   }
