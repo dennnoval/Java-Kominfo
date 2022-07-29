@@ -119,6 +119,7 @@ public class KepegawaianController implements Initializable {
   @FXML
   void reset(ActionEvent event) {
     clearFormField();
+    nipPegawaiTextField.setDisable(false);
   }
 
   @FXML
@@ -176,6 +177,7 @@ public class KepegawaianController implements Initializable {
       jenisKelaminComboBox.getSelectionModel().select(String.valueOf(pegawai.getJenisKelamin()));
       golonganComboBox.getSelectionModel().select(String.valueOf(pegawai.getGolongan()));
       alamatTextArea.setText(pegawai.getAlamat());
+      nipPegawaiTextField.setDisable(true);
     });
   }
 
