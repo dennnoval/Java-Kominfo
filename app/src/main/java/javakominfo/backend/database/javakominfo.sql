@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 29, 2022 at 03:26 AM
+-- Generation Time: Jul 27, 2022 at 02:35 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.28
 
@@ -30,11 +30,11 @@ SET time_zone = "+00:00";
 CREATE TABLE `gaji` (
   `NIP` varchar(20) NOT NULL,
   `nama` varchar(50) NOT NULL,
-  `golongan` char(1) NOT NULL,
-  `gapok` int(15) NOT NULL,
-  `transport` int(15) NOT NULL,
-  `pulsa` int(15) NOT NULL,
-  `total_gaji` int(20) NOT NULL
+  `golongan` char(1) DEFAULT NULL,
+  `gapok` int(15) DEFAULT NULL,
+  `transport` int(15) DEFAULT NULL,
+  `pulsa` int(15) DEFAULT NULL,
+  `total_gaji` int(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -42,8 +42,8 @@ CREATE TABLE `gaji` (
 --
 
 INSERT INTO `gaji` (`NIP`, `nama`, `golongan`, `gapok`, `transport`, `pulsa`, `total_gaji`) VALUES
-('112233445566', 'John Doe', 'B', 5000000, 450000, 200000, 5650000),
-('88888888', 'Jane Doe', 'C', 3000000, 200000, 100000, 3300000);
+('001', 'John Doe', 'A', 2500000, 400000, 100000, 3000000),
+('002', 'Jane', 'B', 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -65,8 +65,8 @@ CREATE TABLE `pegawai` (
 --
 
 INSERT INTO `pegawai` (`NIP`, `nama`, `tanggal_lahir`, `jenis_kelamin`, `golongan`, `alamat`) VALUES
-('55555555', 'gshahfgagagsh', '2002-02-12', 'P', 'C', 'ga ag ag gfg hgd hd hjd jhj hj d'),
-('88888888', 'vbmnvmmn', '2000-12-01', 'L', 'B', 'dybfciuhcuHIU FHWHF HO OEHOHOUF HOANS');
+('001', 'John Doe', '2022-07-05', 'L', 'A', 'Beverly Hills St.'),
+('002', 'Jane', '2022-07-13', 'P', 'B', 'Nama Jalan');
 
 -- --------------------------------------------------------
 
@@ -76,10 +76,10 @@ INSERT INTO `pegawai` (`NIP`, `nama`, `tanggal_lahir`, `jenis_kelamin`, `golonga
 
 CREATE TABLE `users` (
   `username` varchar(75) NOT NULL,
-  `password` varchar(75) NOT NULL,
-  `email` varchar(75) NOT NULL,
-  `role` enum('SUPERADMIN','ADMIN','GUEST') NOT NULL,
-  `createdAt` date NOT NULL
+  `password` varchar(75) DEFAULT NULL,
+  `email` varchar(75) DEFAULT NULL,
+  `role` enum('ADMIN','KARYAWAN') DEFAULT NULL,
+  `createdAt` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -87,13 +87,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`username`, `password`, `email`, `role`, `createdAt`) VALUES
-('1122344', '1234', 'dasds@email.com', 'ADMIN', '2022-04-08'),
-('112234455', '1234', 'gggdsdsdsdsa@email.com', 'SUPERADMIN', '2022-04-08'),
-('445566', '1234', 'abc@email.com', 'GUEST', '2022-06-28'),
-('AD', '1234', 'dasd@dd.com', 'ADMIN', '2022-04-04'),
-('GS', '1234', 'gst@jj.com', 'GUEST', '2022-04-04'),
-('SA', '1234', 'dasdsad@dasdas.com', 'SUPERADMIN', '2022-04-03'),
-('SAD', '1234', 'dasdas@gmail.com', 'GUEST', '2022-04-08');
+('001', '1234', 'ad@email.com', 'ADMIN', '2022-07-27'),
+('002', '1234', 'abc@yahuu.com', 'KARYAWAN', '2022-07-27');
 
 -- --------------------------------------------------------
 
@@ -110,13 +105,6 @@ CREATE TABLE `v_a` (
   `file` longblob DEFAULT NULL,
   `file_dir` varchar(64) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `v_a`
---
-
-INSERT INTO `v_a` (`ID`, `tanggal`, `NIP`, `nama_va`, `domain`, `file`, `file_dir`) VALUES
-(5, '2022-01-10', 'SA', 'Abcd Vulnerability', 'https://ibm.com', NULL, '/Users/dennnoval/Downloads/Exam-Transcript.pdf');
 
 --
 -- Indexes for dumped tables
@@ -154,7 +142,7 @@ ALTER TABLE `v_a`
 -- AUTO_INCREMENT for table `v_a`
 --
 ALTER TABLE `v_a`
-  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
