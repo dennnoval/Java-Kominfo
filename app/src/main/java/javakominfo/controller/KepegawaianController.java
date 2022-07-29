@@ -98,12 +98,19 @@ public class KepegawaianController implements Initializable {
   @FXML
   void edit(ActionEvent event) {
     pegawaiRepo.update(getEntityByForm());
+    Gaji gaji = new GajiRepo().readById(getEntityByForm().getNIP());
+    new GajiRepo().update(new Gaji(
+      getEntityByForm().getNIP(), getEntityByForm().getNama(),
+      getEntityByForm().getGolongan(), gaji.getGapok(), gaji.getTransport(),
+      gaji.getPulsa()
+    ));
     clearFormField();
     initTable();
   }
 
   @FXML
   void hapus(ActionEvent event) {
+    new GajiRepo().delete(new GajiRepo().readById(getEntityByForm().getNIP()));
     pegawaiRepo.delete(getEntityByForm());
     clearFormField();
     initTable();
