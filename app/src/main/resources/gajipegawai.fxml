@@ -101,23 +101,6 @@
       </font>
     </TextField>
     <Button layoutX="939.0" layoutY="149.0" mnemonicParsing="false" onAction="#cariDataPegawai" prefHeight="31.0" prefWidth="71.0" text="Cari" />
-    <Group fx:id="btnSimpanGroup" layoutX="34.0" layoutY="446.0">
-      <children>
-        <Button fx:id="btnSimpan" mnemonicParsing="false" onAction="#simpan" prefHeight="46.0" prefWidth="90.0" text="Simpan">
-          <font>
-            <Font size="16.0" />
-          </font>
-          <padding>
-            <Insets left="25.0" />
-          </padding>
-        </Button>
-        <ImageView disable="true" fitHeight="31.0" fitWidth="26.0" layoutX="7.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
-          <image>
-            <Image url="@assets/simpan.png" />
-          </image>
-        </ImageView>
-      </children>
-    </Group>
     <TableView fx:id="gajiPegawaiTableView" layoutX="582.0" layoutY="196.0" prefHeight="300.0" prefWidth="593.0" stylesheets="@style.css">
       <columns>
         <TableColumn fx:id="nipPegawaiColumn" editable="false" prefWidth="75.0" text="NIP Pegawai" />
@@ -129,7 +112,7 @@
         <TableColumn fx:id="totalGajiColumn" editable="false" minWidth="1.0" prefWidth="58.0" text="Total Gaji" />
       </columns>
     </TableView>
-    <Group layoutX="198.0" layoutY="446.0">
+    <Group layoutX="95.0" layoutY="446.0">
       <children>
         <Button fx:id="btnEdit" layoutX="-60.0" mnemonicParsing="false" onAction="#edit" prefHeight="46.0" prefWidth="90.0" text="Edit">
           <font>
@@ -146,24 +129,7 @@
         </ImageView>
       </children>
     </Group>
-    <Group fx:id="btnHapusGroup" layoutX="282.0" layoutY="446.0">
-      <children>
-        <Button fx:id="btnHapus" layoutX="-40.0" mnemonicParsing="false" onAction="#hapus" prefHeight="46.0" prefWidth="90.0" text="Hapus">
-          <font>
-            <Font size="16.0" />
-          </font>
-          <padding>
-            <Insets left="20.0" />
-          </padding>
-        </Button>
-        <ImageView disable="true" fitHeight="31.0" fitWidth="26.0" layoutX="-35.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
-          <image>
-            <Image url="@assets/delete.png" />
-          </image>
-        </ImageView>
-      </children>
-    </Group>
-    <Group layoutX="405.0" layoutY="446.0">
+    <Group layoutX="202.0" layoutY="446.0">
       <children>
         <Button layoutX="-60.0" mnemonicParsing="false" onAction="#reset" prefHeight="46.0" prefWidth="90.0" text="Reset">
           <font>
@@ -180,7 +146,7 @@
         </ImageView>
       </children>
     </Group>
-    <Group layoutX="528.0" layoutY="446.0">
+    <Group layoutX="328.0" layoutY="446.0">
       <children>
         <Button layoutX="-80.0" mnemonicParsing="false" onAction="#cetak" prefHeight="46.0" prefWidth="90.0" text="Cetak">
           <font>
