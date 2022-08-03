@@ -76,20 +76,12 @@ public class GajiPegawaiController implements Initializable {
   private TableColumn<Gaji, String> totalGajiColumn;
 
   @FXML
-  private Group btnSimpanGroup;
-
-  @FXML
   private Button btnEdit;
-
-  @FXML
-  private Group btnHapusGroup;
 
   private GajiRepo gajiRepo;
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
-    btnSimpanGroup.setVisible(false);
-    btnHapusGroup.setVisible(false);
     setDisableCrudButton(true);
     nipPegawaiTextField.setDisable(true);
     namaPegawaiTextField.setDisable(true);
@@ -254,9 +246,7 @@ public class GajiPegawaiController implements Initializable {
   }
 
   protected void setDisableCrudButton(boolean state) {
-    // btnSimpanGroup.setDisable(state);
     btnEdit.setDisable(state);
-    // btnHapusGroup.setDisable(state);
   }
 
 }
