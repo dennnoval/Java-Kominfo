@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.14.0.final using JasperReports Library version 6.14.0-2ab0d8625be255bf609c78e1181801213e51db8f  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="va_report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2673881a-741a-4b66-b5d0-edc385f40575">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Java_Kominfo"/>
@@ -49,80 +50,114 @@
 	</background>
 	<title>
 		<band height="79" splitType="Stretch">
-			<staticText>
-				<reportElement x="120" y="23" width="380" height="30" uuid="4c3742eb-e3a6-4d0f-8b33-820fdbbb0126"/>
-				<textElement>
-					<font size="20" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Laporan Data Pegawai Kominfo]]></text>
-			</staticText>
 			<image>
-				<reportElement x="0" y="4" width="107" height="75" uuid="b4ad66f9-b92e-40c4-ad2f-cbf8aa2d8c2f"/>
-				<imageExpression><![CDATA[getClass().getResource("javakominfo/imgclass/logo.png")]]></imageExpression>
+				<reportElement x="0" y="4" width="107" height="75" uuid="49c8e03f-9826-42f5-bd1e-f3a3ddb0803e"/>
+				<imageExpression><![CDATA[getClass().getClassLoader().getResource("assets/logokominfo.png")]]></imageExpression>
 			</image>
+			<staticText>
+				<reportElement x="120" y="9" width="424" height="21" forecolor="#0033CC" uuid="89fb2ff3-383e-4b39-b01c-64b71d59e2c8"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KEMENTERIAN KOMUNIKASI DAN INFORMATIKA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="33" width="400" height="21" forecolor="#0033CC" uuid="faa62798-d9b6-440d-9434-7bb26eb05b8e"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DIREKTORAT JENDERAL PENYELENGGARAAN POS DAN INFORMATIKA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="119" y="58" width="400" height="16" forecolor="#0033CC" uuid="cb1fd390-bbbf-4ab7-a147-0898dc6f9165"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jalan Medan Merdeka Barat No. 9 Jakarta Pusat 10110  Jakarta, www.kominfo.go.id]]></text>
+			</staticText>
 		</band>
 	</title>
 	<pageHeader>
-		<band height="66" splitType="Stretch">
+		<band height="93" splitType="Stretch">
 			<textField>
-				<reportElement x="453" y="16" width="100" height="30" uuid="cdfe0cd1-355c-4b29-bba2-58d35a0b92e7"/>
+				<reportElement x="72" y="63" width="103" height="17" uuid="87278c10-6a6f-43ab-81ee-4c1a86d2b223"/>
+				<textElement>
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement x="170" y="14" width="227" height="30" uuid="afb4f6b8-7220-431b-8af1-e66c3aba9fdd"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Laporan Data Pegawai Kominfo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="63" width="79" height="13" uuid="a33d35ac-e198-427e-a974-9b63d49ee63b"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Tanggal Cetak : ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="5" width="555" height="1" uuid="59c593e2-c2f9-4a58-ac45-0ed44daebf70"/>
+			</line>
 		</band>
 	</pageHeader>
 	<columnHeader>
-		<band height="61" splitType="Stretch">
+		<band height="20" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="0" width="20" height="30" uuid="959dbc8b-b1d3-45c0-a4b8-a6b528eb1a02">
+				<reportElement x="0" y="0" width="20" height="20" uuid="959dbc8b-b1d3-45c0-a4b8-a6b528eb1a02">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4073b507-59c8-4703-b9c0-626e864443c5"/>
 				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[NIP]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="30" y="0" width="70" height="30" uuid="4ce36333-cb95-4ea4-94bb-f62a205f7369">
+				<reportElement x="30" y="0" width="70" height="20" uuid="4ce36333-cb95-4ea4-94bb-f62a205f7369">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="01764093-ec6b-4041-a6ee-adf31b7ce039"/>
 				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Nama]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="110" y="0" width="92" height="30" uuid="81984bf1-009e-4a38-8166-0f707f200ec7">
+				<reportElement x="110" y="0" width="92" height="20" uuid="81984bf1-009e-4a38-8166-0f707f200ec7">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="213cf6d6-6a88-4c84-a999-9f6c08241053"/>
 				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Tanggal Lahir]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="190" y="0" width="80" height="30" uuid="564e987e-e3a1-48ea-ad31-f6a9c6dbbdf8">
+				<reportElement x="190" y="0" width="80" height="20" uuid="564e987e-e3a1-48ea-ad31-f6a9c6dbbdf8">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e88db632-d10a-4e59-93b1-11080fffe122"/>
 				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Jenis Kelamin]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="270" y="0" width="70" height="30" uuid="bb12a181-c4f5-4ddf-b066-7a025792e23c">
+				<reportElement x="270" y="0" width="70" height="20" uuid="bb12a181-c4f5-4ddf-b066-7a025792e23c">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="59755664-af29-4fd8-8ab2-da05c537aa20"/>
 				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Golongan]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="330" y="0" width="150" height="30" uuid="1cfdc56c-212f-47cd-acfa-57eff94c5bae">
+				<reportElement x="330" y="0" width="150" height="20" uuid="1cfdc56c-212f-47cd-acfa-57eff94c5bae">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bf088364-b593-4546-b026-9241df00ceb6"/>
 				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Alamat]]></text>
 			</staticText>
@@ -169,17 +204,27 @@
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="45" splitType="Stretch"/>
+		<band height="27" splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
-		<band height="54" splitType="Stretch"/>
-	</pageFooter>
-	<summary>
-		<band height="42" splitType="Stretch">
+		<band height="94" splitType="Stretch">
 			<staticText>
-				<reportElement x="200" y="22" width="231" height="20" uuid="32e5b174-5dfb-41c3-bdc0-44e163ed3bf8"/>
-				<text><![CDATA[Copyright Team KKP Unindra - 2021]]></text>
+				<reportElement x="484" y="74" width="72" height="20" uuid="3e4734d7-b7e0-4bf5-a7eb-7d5c1c7405d1"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Nama Admin]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="498" y="5" width="42" height="20" uuid="96b68638-f795-4995-aaff-b3752423025a"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Admin]]></text>
 			</staticText>
 		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
 	</summary>
 </jasperReport>
