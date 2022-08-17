@@ -11,15 +11,16 @@ repositories {
 
 dependencies {
   implementation fileTree(dir: 'lib', include: '*.jar')
+  // testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
 }
 
 application {
   mainClass = 'javakominfo.App'
 }
 
-tasks.named('test') {
+/**tasks.named('test') {
   useJUnitPlatform()
-}
+}*/
 
 jar {
   manifest {
