@@ -9,9 +9,9 @@
 	<queryString language="SQL">
 		<![CDATA[SELECT * FROM V_A]]>
 	</queryString>
-	<field name="ID" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="ID"/>
-		<property name="com.jaspersoft.studio.field.label" value="ID"/>
+	<field name="ID_VA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ID_VA"/>
+		<property name="com.jaspersoft.studio.field.label" value="ID_VA"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="v_a"/>
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
@@ -175,7 +175,7 @@
 				<reportElement x="0" y="0" width="20" height="30" uuid="e58c2f5e-4ba9-4e1e-a7b0-8f0ff6c469e3">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7d41e719-ff4d-44ea-aae3-94c72f1d411f"/>
 				</reportElement>
-				<textFieldExpression><![CDATA[$F{ID}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{ID_VA}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="25" y="0" width="90" height="30" uuid="c8307c7a-0bc0-413c-80c3-c132152bb0d6">
@@ -214,13 +214,13 @@
 	</columnFooter>
 	<pageFooter>
 		<band height="94" splitType="Stretch">
-			<staticText>
-				<reportElement x="484" y="74" width="72" height="20" uuid="3e4734d7-b7e0-4bf5-a7eb-7d5c1c7405d1"/>
+			<textField>
+				<reportElement x="500" y="74" width="72" height="20" uuid="3e4734d7-b7e0-4bf5-a7eb-7d5c1c7405d1"/>
 				<textElement>
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
-				<text><![CDATA[Nama Admin]]></text>
-			</staticText>
+				<textFieldExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}.get("nama_admin")]]></textFieldExpression>
+			</textField>
 			<staticText>
 				<reportElement x="498" y="5" width="42" height="20" uuid="96b68638-f795-4995-aaff-b3752423025a"/>
 				<textElement>
