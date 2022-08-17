@@ -60,8 +60,8 @@ public class Mitigasi implements Serializable {
     return NIP;
   }
 
-  public void setID_mitigasi(int ID_VA) {
-    this.ID_VA = ID_VA;
+  public void setID_mitigasi(int ID_mitigasi) {
+    this.ID_mitigasi = ID_mitigasi;
   }
 
 }
