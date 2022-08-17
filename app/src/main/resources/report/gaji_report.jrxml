@@ -250,15 +250,15 @@
 	</columnFooter>
 	<pageFooter>
 		<band height="119" splitType="Stretch">
-			<staticText>
-				<reportElement x="493" y="0" width="42" height="20" uuid="ed0b0d66-2609-4936-9484-5ff393ad86d7"/>
+			<textField>
+				<reportElement x="500" y="74" width="72" height="20" uuid="3e4734d7-b7e0-4bf5-a7eb-7d5c1c7405d1"/>
 				<textElement>
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
-				<text><![CDATA[Admin]]></text>
-			</staticText>
+				<textFieldExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}.get("nama_admin")]]></textFieldExpression>
+			</textField>
 			<staticText>
-				<reportElement x="479" y="69" width="72" height="20" uuid="fc490c8b-4714-4b63-bca3-623ea1d275e8"/>
+				<reportElement x="479" y="5" width="72" height="20" uuid="fc490c8b-4714-4b63-bca3-623ea1d275e8"/>
 				<textElement>
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
