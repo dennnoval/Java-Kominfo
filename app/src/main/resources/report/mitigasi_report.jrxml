@@ -120,7 +120,7 @@
 				<textElement>
 					<font fontName="Times New Roman" isBold="true"/>
 				</textElement>
-				<text><![CDATA[ID_M]]></text>
+				<text><![CDATA[ID]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="35" y="0" width="42" height="20" uuid="17a9a793-f706-4e44-b997-01f94585941c">
@@ -229,13 +229,13 @@
 	</columnFooter>
 	<pageFooter>
 		<band height="94" splitType="Stretch">
-			<staticText>
-				<reportElement x="484" y="74" width="72" height="20" uuid="3e4734d7-b7e0-4bf5-a7eb-7d5c1c7405d1"/>
+			<textField>
+				<reportElement x="500" y="74" width="72" height="20" uuid="3e4734d7-b7e0-4bf5-a7eb-7d5c1c7405d1"/>
 				<textElement>
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
-				<text><![CDATA[Nama Admin]]></text>
-			</staticText>
+				<textFieldExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}.get("nama_admin")]]></textFieldExpression>
+			</textField>
 			<staticText>
 				<reportElement x="498" y="5" width="42" height="20" uuid="96b68638-f795-4995-aaff-b3752423025a"/>
 				<textElement>
