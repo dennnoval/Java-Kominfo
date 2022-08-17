@@ -22,9 +22,10 @@ public class ReportUtil {
 		conn = new DB().connect();
 	}
 
-  public void printReport(InputStream fileStream) {
+  public void printReport(InputStream fileStream, String namaAdmin) {
     try {
       HashMap<String, Object> parameter = new HashMap<>();
+      parameter.put("nama_admin", namaAdmin);
       JasperReport jasperReport = JasperCompileManager.compileReport(fileStream);
       JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameter, conn);
       JasperViewer.viewReport(jasperPrint, false);
