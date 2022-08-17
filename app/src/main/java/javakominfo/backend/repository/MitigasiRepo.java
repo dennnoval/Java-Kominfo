@@ -19,7 +19,7 @@ public class MitigasiRepo implements CRUD<Mitigasi> {
 	private PreparedStatement ps;
 	private final String TABLE = "Mitigasi";
 
-	public V_ARepo() {
+	public MitigasiRepo() {
 		conn = new DB().connect();
 	}
 
@@ -32,7 +32,7 @@ public class MitigasiRepo implements CRUD<Mitigasi> {
 			ps.setString(3, mitigasi.getPrioritas());
 			ps.setBinaryStream(4, new FileInputStream(mitigasi.getDokumentasi()));
 			ps.setString(5, mitigasi.getFileDir());
-			ps.setString(6, mitigasi.getID_VA());
+			ps.setInt(6, mitigasi.getID_VA());
 			ps.setString(7, mitigasi.getNIP());
 			ps.execute();
 			return true;
@@ -57,7 +57,7 @@ public class MitigasiRepo implements CRUD<Mitigasi> {
 					rs.getInt("ID_VA"),
 					rs.getString("NIP")
 				);
-				mitigasi.setID_mitigasi(rs.getString("ID_mitigasi"));
+				mitigasi.setID_mitigasi(rs.getInt("ID_mitigasi"));
 				mits.add(mitigasi);
 			}
 		} catch(Exception e) {
@@ -82,7 +82,7 @@ public class MitigasiRepo implements CRUD<Mitigasi> {
 					rs.getInt("ID_VA"),
 					rs.getString("NIP")
 				);
-				mitigasi.setID(rs.getString("ID_mitigasi"));
+				mitigasi.setID_mitigasi(rs.getInt("ID_mitigasi"));
 			}
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -98,7 +98,7 @@ public class MitigasiRepo implements CRUD<Mitigasi> {
 			ps.setString(2, mitigasi.getPrioritas());
 			ps.setBinaryStream(3, new FileInputStream(mitigasi.getDokumentasi()));
 			ps.setString(4, mitigasi.getFileDir());
-			ps.setString(5, mitigasi.getID_mitigasi());
+			ps.setInt(5, mitigasi.getID_mitigasi());
 			ps.setString(6, mitigasi.getNIP());
 			ps.executeUpdate();
 		} catch(Exception e) {
@@ -110,7 +110,7 @@ public class MitigasiRepo implements CRUD<Mitigasi> {
 	public void delete(Mitigasi mitigasi) {
 		try {
 			ps = conn.prepareStatement("DELETE FROM "+TABLE+" WHERE ID_mitigasi=? AND NIP=?;");
-			ps.setInt(1, Integer.parseInt(mitigasi.getID_mitigasi()));
+			ps.setInt(1, mitigasi.getID_mitigasi());
 			ps.setString(2, mitigasi.getNIP());
 			ps.executeUpdate();
 		} catch(Exception e) {
