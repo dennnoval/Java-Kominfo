@@ -11,6 +11,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javakominfo.backend.entity.Users;
+import javakominfo.backend.repository.PegawaiRepo;
 import javakominfo.backend.repository.UsersRepo;
 
 import java.net.URL;
@@ -62,6 +63,8 @@ public class LoginController {
       if (showAlert("Login successfully!").get() == ButtonType.OK) {
         Preferences prefs = Preferences.userNodeForPackage(LoginController.class);
         prefs.put("nip", user.getUsername());
+        String namaPegawai = new PegawaiRepo().readById(user.getUsername()).getNama();
+        prefs.put("nama_pegawai", namaPegawai);
         loginBtn.getScene().getWindow().hide();
         AnchorPane root = null;
         try {
