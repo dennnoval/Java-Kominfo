@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jul 27, 2022 at 02:35 PM
+-- Generation Time: Aug 17, 2022 at 02:12 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.28
 
@@ -42,8 +42,25 @@ CREATE TABLE `gaji` (
 --
 
 INSERT INTO `gaji` (`NIP`, `nama`, `golongan`, `gapok`, `transport`, `pulsa`, `total_gaji`) VALUES
-('001', 'John Doe', 'A', 2500000, 400000, 100000, 3000000),
+('001', 'John', 'A', 2500000, 400000, 100000, 3000000),
 ('002', 'Jane', 'B', 0, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mitigasi`
+--
+
+CREATE TABLE `mitigasi` (
+  `ID_mitigasi` int(3) NOT NULL,
+  `tanggal` date NOT NULL,
+  `nama_mitigasi` varchar(50) NOT NULL,
+  `prioritas` enum('LOW','MID','HIGH') NOT NULL,
+  `dokumentasi` longblob DEFAULT NULL,
+  `file_dir` varchar(64) DEFAULT NULL,
+  `ID_VA` int(5) NOT NULL,
+  `NIP` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -65,7 +82,7 @@ CREATE TABLE `pegawai` (
 --
 
 INSERT INTO `pegawai` (`NIP`, `nama`, `tanggal_lahir`, `jenis_kelamin`, `golongan`, `alamat`) VALUES
-('001', 'John Doe', '2022-07-05', 'L', 'A', 'Beverly Hills St.'),
+('001', 'John', '2022-07-05', 'L', 'A', 'Beverly Hills St.'),
 ('002', 'Jane', '2022-07-13', 'P', 'B', 'Nama Jalan');
 
 -- --------------------------------------------------------
@@ -97,7 +114,7 @@ INSERT INTO `users` (`username`, `password`, `email`, `role`, `createdAt`) VALUE
 --
 
 CREATE TABLE `v_a` (
-  `ID` int(5) NOT NULL,
+  `ID_VA` int(5) NOT NULL,
   `tanggal` date NOT NULL,
   `NIP` varchar(15) NOT NULL,
   `nama_va` varchar(80) NOT NULL,
@@ -117,6 +134,14 @@ ALTER TABLE `gaji`
   ADD PRIMARY KEY (`NIP`);
 
 --
+-- Indexes for table `mitigasi`
+--
+ALTER TABLE `mitigasi`
+  ADD PRIMARY KEY (`ID_mitigasi`),
+  ADD KEY `ID_VA` (`ID_VA`),
+  ADD KEY `NIP` (`NIP`);
+
+--
 -- Indexes for table `pegawai`
 --
 ALTER TABLE `pegawai`
@@ -132,17 +157,53 @@ ALTER TABLE `users`
 -- Indexes for table `v_a`
 --
 ALTER TABLE `v_a`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`ID_VA`),
+  ADD KEY `NIP` (`NIP`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
+-- AUTO_INCREMENT for table `mitigasi`
+--
+ALTER TABLE `mitigasi`
+  MODIFY `ID_mitigasi` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT for table `v_a`
 --
 ALTER TABLE `v_a`
-  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `ID_VA` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `gaji`
+--
+ALTER TABLE `gaji`
+  ADD CONSTRAINT `gaji_ibfk_1` FOREIGN KEY (`NIP`) REFERENCES `pegawai` (`NIP`);
+
+--
+-- Constraints for table `mitigasi`
+--
+ALTER TABLE `mitigasi`
+  ADD CONSTRAINT `mitigasi_ibfk_1` FOREIGN KEY (`NIP`) REFERENCES `pegawai` (`NIP`),
+  ADD CONSTRAINT `mitigasi_ibfk_2` FOREIGN KEY (`ID_VA`) REFERENCES `v_a` (`ID_VA`);
+
+--
+-- Constraints for table `users`
+--
+ALTER TABLE `users`
+  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`username`) REFERENCES `pegawai` (`NIP`);
+
+--
+-- Constraints for table `v_a`
+--
+ALTER TABLE `v_a`
+  ADD CONSTRAINT `v_a_ibfk_1` FOREIGN KEY (`NIP`) REFERENCES `pegawai` (`NIP`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
