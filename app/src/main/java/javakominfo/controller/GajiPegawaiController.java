@@ -80,8 +80,11 @@ public class GajiPegawaiController implements Initializable {
 
   private GajiRepo gajiRepo;
 
+  private Preferences prefs;
+
   @Override
   public void initialize(URL location, ResourceBundle resources) {
+    prefs = Preferences.userNodeForPackage(LoginController.class);
     setDisableCrudButton(true);
     nipPegawaiTextField.setDisable(true);
     namaPegawaiTextField.setDisable(true);
@@ -114,7 +117,7 @@ public class GajiPegawaiController implements Initializable {
   void cetak(ActionEvent event) {
     ReportUtil reportUtil = new ReportUtil();
     InputStream fileStream = getClass().getClassLoader().getResourceAsStream("report/gaji_report.jrxml");
-    reportUtil.printReport(fileStream);
+    reportUtil.printReport(fileStream, prefs.get("nama_pegawai", null));
   }
 
   @FXML
