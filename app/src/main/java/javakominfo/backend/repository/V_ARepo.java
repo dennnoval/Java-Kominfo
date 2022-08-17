@@ -55,7 +55,7 @@ public class V_ARepo implements CRUD<V_A> {
 					rs.getString("domain"),
 					rs.getString("file_dir")
 				);
-				v_a.setID(rs.getString("ID"));
+				v_a.setID(rs.getString("ID_VA"));
 				v_as.add(v_a);
 			}
 		} catch(Exception e) {
@@ -68,7 +68,7 @@ public class V_ARepo implements CRUD<V_A> {
 	public V_A readById(String id) {
 		V_A v_a = null;
 		try {
-			ps = conn.prepareStatement("SELECT * FROM "+TABLE+" WHERE ID=?;");
+			ps = conn.prepareStatement("SELECT * FROM "+TABLE+" WHERE ID_VA=?;");
 			ps.setString(1, id);
 			ResultSet rs = ps.executeQuery();
 			if(rs.next()) {
@@ -79,7 +79,7 @@ public class V_ARepo implements CRUD<V_A> {
 					rs.getString("domain"),
 					rs.getString("file_dir")
 				);
-				v_a.setID(rs.getString("ID"));
+				v_a.setID(rs.getString("ID_VA"));
 			}
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -90,7 +90,7 @@ public class V_ARepo implements CRUD<V_A> {
 	@Override
 	public void update(V_A v_a) {
 		try {
-			ps = conn.prepareStatement("UPDATE "+TABLE+" SET nama_va=?, domain=?, file=?, file_dir=? WHERE ID=? AND NIP=?;");
+			ps = conn.prepareStatement("UPDATE "+TABLE+" SET nama_va=?, domain=?, file=?, file_dir=? WHERE ID_VA=? AND NIP=?;");
 			ps.setString(1, v_a.getNamaV_A());
 			ps.setString(2, v_a.getDomain());
 			ps.setBinaryStream(3, new FileInputStream(v_a.getFile()));
@@ -106,7 +106,7 @@ public class V_ARepo implements CRUD<V_A> {
 	@Override
 	public void delete(V_A v_a) {
 		try {
-			ps = conn.prepareStatement("DELETE FROM "+TABLE+" WHERE ID=? AND NIP=?;");
+			ps = conn.prepareStatement("DELETE FROM "+TABLE+" WHERE ID_VA=? AND NIP=?;");
 			ps.setInt(1, Integer.parseInt(v_a.getID()));
 			ps.setString(2, v_a.getNIP());
 			ps.executeUpdate();
