@@ -30,6 +30,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.prefs.Preferences;
 
 public class KepegawaianController implements Initializable {
 
@@ -74,8 +75,11 @@ public class KepegawaianController implements Initializable {
 
   private PegawaiRepo pegawaiRepo;
 
+  private Preferences prefs;
+
   @Override
   public void initialize(URL location, ResourceBundle resources) {
+    prefs = Preferences.userNodeForPackage(LoginController.class);
     jenisKelaminComboBox.getItems().addAll(new String[]{"Laki-laki", "Perempuan"});
     golonganComboBox.getItems().addAll(new String[]{"A", "B", "C"});
     pegawaiRepo = new PegawaiRepo();
@@ -92,7 +96,7 @@ public class KepegawaianController implements Initializable {
   void cetak(ActionEvent event) {
     ReportUtil reportUtil = new ReportUtil();
     InputStream fileStream = getClass().getClassLoader().getResourceAsStream("report/pegawai_report.jrxml");
-    reportUtil.printReport(fileStream);
+    reportUtil.printReport(fileStream, prefs.get("nama_pegawai", null));
   }
 
   @FXML
