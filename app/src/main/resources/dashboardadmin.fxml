@@ -20,7 +20,7 @@
             <Font name="Verdana Bold" size="21.0" />
          </font>
       </Label>
-      <Button fx:id="gajiBtn" layoutX="364.0" layoutY="160.0"  mnemonicParsing="false" onAction="#viewGajiPegawaiFrame" prefHeight="60.0" prefWidth="190.0" text="Gaji Pegawai">
+      <Button fx:id="gajiBtn" layoutX="364.0" layoutY="160.0" mnemonicParsing="false" onAction="#viewGajiPegawaiFrame" prefHeight="60.0" prefWidth="190.0" text="Gaji Pegawai">
          <font>
             <Font size="18.0" />
          </font>
@@ -28,7 +28,7 @@
             <Insets left="35.0" />
          </padding>
       </Button>
-      <Button fx:id="pegawaiBtn"  layoutX="161.0" layoutY="160.0" mnemonicParsing="false" onAction="#viewKominfoPegawaiFrame" prefHeight="60.0" prefWidth="196.0" text="Kominfo Pegawai">
+      <Button fx:id="pegawaiBtn" layoutX="161.0" layoutY="160.0" mnemonicParsing="false" onAction="#viewKominfoPegawaiFrame" prefHeight="60.0" prefWidth="196.0" text="Kominfo Pegawai">
          <font>
             <Font size="18.0" />
          </font>
@@ -36,12 +36,12 @@
             <Insets left="30.0" />
          </padding>
       </Button>
-      <Button fx:id="vaBtn" layoutX="161.0" layoutY="233.0" mnemonicParsing="false" onAction="#viewVAFrame" prefHeight="60.0" prefWidth="399.0" text="Vulnerability Assessment">
+      <Button fx:id="vaBtn" layoutX="161.0" layoutY="233.0" mnemonicParsing="false" onAction="#viewVAFrame" prefHeight="60.0" prefWidth="265.0" text="Vulnerability Assessment">
          <font>
             <Font size="18.0" />
          </font>
          <padding>
-            <Insets left="25.0" />
+            <Insets left="30.0" />
          </padding>
       </Button>
       <Button fx:id="registrationBtn" layoutX="161.0" layoutY="306.0" mnemonicParsing="false" onAction="#viewRegisFrame" prefHeight="60.0" prefWidth="242.0" text="Buat User &amp; Admin">
@@ -52,7 +52,7 @@
             <Insets left="30.0" />
          </padding>
       </Button>
-      <Button fx:id="logoutBtn" layoutX="417.0" layoutY="306.0" mnemonicParsing="false" onAction="#logout" prefHeight="60.0" prefWidth="140.0" text="Keluar">
+      <Button fx:id="logoutBtn" layoutX="409.0" layoutY="306.0" mnemonicParsing="false" onAction="#logout" prefHeight="60.0" prefWidth="146.0" text="Keluar">
          <font>
             <Font size="18.0" />
          </font>
@@ -60,7 +60,7 @@
             <Insets left="35.0" />
          </padding>
       </Button>
-      <ImageView disable="true" fitHeight="31.0" fitWidth="26.0" layoutX="243.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView disable="true" fitHeight="31.0" fitWidth="26.0" layoutX="181.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@assets/bugs.png" />
          </image>
@@ -85,5 +85,10 @@
             <Image url="@assets/create.png" />
          </image>
       </ImageView>
+      <Button fx:id="mitigasiBtn" layoutX="433.0" layoutY="233.0" mnemonicParsing="false" onAction="#viewMitigasiFrame" prefHeight="60.0" prefWidth="121.0" text="Mitigasi V.A">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
