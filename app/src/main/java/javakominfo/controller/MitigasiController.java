@@ -116,7 +116,7 @@ public class MitigasiController implements Initializable {
   void cetak(ActionEvent event) {
     ReportUtil reportUtil = new ReportUtil();
     InputStream fileStream = getClass().getClassLoader().getResourceAsStream("report/mitigasi_report.jrxml");
-    reportUtil.printReport(fileStream);
+    reportUtil.printReport(fileStream, prefs.get("nama_pegawai", null));
   }
 
   @FXML
