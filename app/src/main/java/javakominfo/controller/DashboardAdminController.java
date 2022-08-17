@@ -36,6 +36,9 @@ public class DashboardAdminController implements Initializable {
   private Button vaBtn;
 
   @FXML
+  private Button mitigasiBtn;
+
+  @FXML
   private Label titleLabel;
 
   @Override
@@ -109,6 +112,21 @@ public class DashboardAdminController implements Initializable {
     AnchorPane root = null;
     try {
       root = (AnchorPane) FXMLLoader.load(getClass().getClassLoader().getResource("vulnerabiltyassessment.fxml"));
+    } catch (Exception ex) {
+      ex.printStackTrace();
+    }
+    Scene scene = new Scene(root);
+    Stage stage = new Stage();
+    stage.setScene(scene);
+    stage.show();
+  }
+
+  @FXML
+  void viewMitigasiFrame(ActionEvent event) {
+    mitigasiBtn.getScene().getWindow().hide();
+    AnchorPane root = null;
+    try {
+      root = (AnchorPane) FXMLLoader.load(getClass().getClassLoader().getResource("mitigasi.fxml"));
     } catch (Exception ex) {
       ex.printStackTrace();
     }
