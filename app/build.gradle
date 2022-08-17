@@ -2,6 +2,8 @@ plugins {
   id 'application'
 }
 
+version = '2.0.0'
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
@@ -27,7 +29,7 @@ jar {
     attributes "Main-Class": "javakominfo.App"
   }
 
-  baseName = 'JavaKominfo-1.0.0'
+  baseName = 'JavaKominfo-2.0.0'
   duplicatesStrategy = DuplicatesStrategy.EXCLUDE
   from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
 }
