@@ -40,6 +40,7 @@
       </TextField>
       <TableView fx:id="mitigasiTable" layoutX="571.0" layoutY="173.0" prefHeight="300.0" prefWidth="480.0" stylesheets="@style.css">
          <columns>
+            <TableColumn fx:id="idMitigasiColumn" editable="false" prefWidth="55.57568359375" text="ID Mitigasi" />
             <TableColumn fx:id="tanggalColumn" editable="false" prefWidth="63.57568359375" text="Tanggal" />
             <TableColumn fx:id="nipColumn" editable="false" prefWidth="57.39111328125" text="NIP" />
             <TableColumn fx:id="namaMitigasiColumn" editable="false" prefWidth="112.60888671875" text="Nama Mitigasi" />
@@ -151,7 +152,7 @@
          </children>
       </Group>
       <ComboBox fx:id="prioritasComboBox" layoutX="215.0" layoutY="281.0" prefWidth="150.0" promptText="-- Prioritas --" />
-      <DatePicker fx:id="tanggalPicker" disable="true" editable="false" layoutX="214.0" layoutY="158.0" prefHeight="31.0" prefWidth="189.0" promptText="M/D/YYYY" />
+      <DatePicker fx:id="tanggalPicker" editable="false" layoutX="214.0" layoutY="158.0" prefHeight="31.0" prefWidth="189.0" promptText="M/D/YYYY" />
       <Label layoutX="45.0" layoutY="245.0" text="Nama Mitigasi :">
          <font>
             <Font size="16.0" />
@@ -177,21 +178,17 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="nipTextField" layoutX="214.0" layoutY="199.0" prefHeight="31.0" prefWidth="218.0">
+      <TextField fx:id="nipTextField" disable="true" layoutX="214.0" layoutY="199.0" prefHeight="31.0" prefWidth="218.0">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="fileDirTextField" disable="true" layoutX="215.0" layoutY="318.0" prefHeight="31.0" prefWidth="323.0">
+      <TextField fx:id="fileDirTextField" onMouseClicked="#browseFile" editable="false" layoutX="215.0" layoutY="318.0" prefHeight="31.0" prefWidth="323.0">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="idVATextField" disable="true" layoutX="215.0" layoutY="359.0" prefHeight="31.0" prefWidth="78.0">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </TextField>
+      <ComboBox fx:id="idVAComboBox" layoutX="215.0" layoutY="359.0" prefWidth="135.0" promptText="-- Pilih ID V.A --" />
       <Separator layoutX="551.0" layoutY="126.0" orientation="VERTICAL" prefHeight="350.0" prefWidth="10.0" />
    </children>
 </AnchorPane>
